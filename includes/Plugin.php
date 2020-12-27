@@ -2,7 +2,9 @@
 
 namespace Ac_Geo_Redirect;
 
-use Inpsyde\MultilingualPress;
+includes ( plugin_dir_path( __FILE__ ) . '../advanced-custom-fields-pro' );
+
+use Inpsyde\MultilingualPress;x
 use Inpsyde\MultilingualPress\Framework\Database\Exception\NonexistentTable;
 use Locale;
 use Throwable;
