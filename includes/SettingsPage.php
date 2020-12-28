@@ -14,7 +14,7 @@ class SettingsPage {
 	}
 
 	/**
-	 * Add Menu Item for Settings
+	 * Add Menu Item for Settings 
 	 */
 
 	public function create_plugin_settings_page() {
