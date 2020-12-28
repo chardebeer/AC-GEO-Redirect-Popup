@@ -47,7 +47,8 @@ class SettingsPage {
 public function plugin_settings_page_content(){
 	?> <div class="wrap">
 	<h1>AC GEO Redirect Settings</h1>
-	</div>
+	</div> 
+	<?php 
 
 }
 	/**
