@@ -67,4 +67,21 @@ class SettingsPage {
 		</div>
 		<?php
 	}
+
+	public function __construct() {
+		// Hook into the admin menu
+		add_action( 'admin_menu', array( $this, 'create_plugin_settings_page' ) );
+	}
+
+	public function create_plugin_settings_page() {
+		$page_title = 'AC GEO Redirect Popup Settings';
+		$menu_title = 'GEO Redirect Popup';
+		$capability = 'manage_options';
+		$slug = 'ac_geo_redirect_popup';
+		$callback = array( $this, 'plugin_settings_page_content' );
+		$icon = 'dashicons-location-alt';
+		$position = 100;
+	
+		add_menu_page( $page_title, $menu_title, $capability, $slug, $callback, $icon, $position );
+	}
 }
