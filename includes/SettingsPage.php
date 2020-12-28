@@ -90,7 +90,7 @@ switch( $arguments['id'] ){
 public function setup_fields() {
 $fields = array(
 	array(
-		'uid' => 'awesome_text_field',
+		'uid' => 'geo_text_field',
 		'label' => 'Sample Text Field',
 		'section' => 'our_first_section',
 		'type' => 'text',
@@ -99,25 +99,25 @@ $fields = array(
 		'supplimental' => 'I am underneath!',
 	),
 	array(
-		'uid' => 'awesome_password_field',
+		'uid' => 'geo_password_field',
 		'label' => 'Sample Password Field',
 		'section' => 'our_first_section',
 		'type' => 'password',
 	),
 	array(
-		'uid' => 'awesome_number_field',
+		'uid' => 'geo_number_field',
 		'label' => 'Sample Number Field',
 		'section' => 'our_first_section',
 		'type' => 'number',
 	),
 	array(
-		'uid' => 'awesome_textarea',
+		'uid' => 'geo_textarea',
 		'label' => 'Sample Text Area',
 		'section' => 'our_first_section',
 		'type' => 'textarea',
 	),
 	array(
-		'uid' => 'awesome_select',
+		'uid' => 'geo_select',
 		'label' => 'Sample Select Dropdown',
 		'section' => 'our_first_section',
 		'type' => 'select',
@@ -131,7 +131,7 @@ $fields = array(
 		'default' => array()
 	),
 	array(
-		'uid' => 'awesome_multiselect',
+		'uid' => 'geo_multiselect',
 		'label' => 'Sample Multi Select',
 		'section' => 'our_first_section',
 		'type' => 'multiselect',
@@ -145,7 +145,7 @@ $fields = array(
 		'default' => array()
 	),
 	array(
-		'uid' => 'awesome_radio',
+		'uid' => 'geo_radio',
 		'label' => 'Sample Radio Buttons',
 		'section' => 'our_first_section',
 		'type' => 'radio',
@@ -159,7 +159,7 @@ $fields = array(
 		'default' => array()
 	),
 	array(
-		'uid' => 'awesome_checkboxes',
+		'uid' => 'geo_checkboxes',
 		'label' => 'Sample Checkboxes',
 		'section' => 'our_first_section',
 		'type' => 'checkbox',
@@ -234,9 +234,6 @@ if( $supplimental = $arguments['supplimental'] ){
 }
 
 }
-
-}
-
 
 	/**
 	 * Render the options page.
