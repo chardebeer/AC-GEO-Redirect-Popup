@@ -47,7 +47,7 @@ final class Plugin {
 	/**
 	 * @var T10ns
 	 */
-	protected $t10ns;
+	public $t10ns;
 
 	/**
 	 * @var CountryCode
@@ -63,19 +63,25 @@ final class Plugin {
 	 * Plugin constructor.
 	 *
 	 * @param SettingsPage $settings_page
+	 * @param DebugPage $debug_page
+	 * @param SettingsContent $settings_content
 	 * @param T10ns $t10ns
 	 * @param API $api
 	 * @param Template $template
 	 * @param CountryCode $country_code
 	 */
 	public function __construct(
+		DebugPage $debug_page,
 		SettingsPage $settings_page,
+		SettingsContent $settings_content,
 		T10ns $t10ns,
 		API $api,
 		Template $template,
 		CountryCode $country_code
 	) {
+		$debug_page->init();
 		$settings_page->init();
+		$settings_content->init();
 		$api->init();
 		$template->init();
 
@@ -165,7 +171,7 @@ final class Plugin {
 	 * @return string
 	 * @throws NonexistentTable
 	 */
-	protected function get_default_locale() : string {
+	public function get_default_locale() : string {
 		$mlp_settings   = get_site_option( 'multilingualpress_site_settings', true );
 		$blog_id        = get_current_blog_id();
 		$default_locale = apply_filters( 'ac_geo_redirect_default_locale', 'us' );
@@ -220,7 +226,11 @@ final class Plugin {
 					$this->show_admin_notices( $e );
 				}
 			);
+
+
 		}
+
+
 	}
 
 	/**
@@ -279,7 +289,7 @@ final class Plugin {
 	 * @return array
 	 * @throws NonexistentTable
 	 */
-	protected function get_assigned_languages() : array {
+	public function get_assigned_languages() : array {
 		$assigned_languages = [];
 
 		foreach ( MultiLingualPress\assignedLanguages() as $site_id => $press_language ) {

@@ -15,7 +15,18 @@ class T10ns {
 	 * @return array
 	 */
 	public function get_t10ns( $locale = 'en_US' ) : array {
-		$t10ns = [
+
+		foreach ($locale as $t10ns[] => $locale[]){
+			$t10ns = [
+				$locale =>[
+					'header' => get_option( 'header_field'),
+					'takeMeTo' => get_option( 'takeMeTo_field'),
+					'remainOn' => get_option( 'remainOn_field'),
+				]
+				];
+			}
+
+		$default_t10ns = [
 			'en_US' => [
 				'header'   => "Hi! It seems like you're in",
 				'takeMeTo' => 'Go to',
@@ -32,6 +43,12 @@ class T10ns {
 				'remainOn' => 'Hold på',
 			],
 		];
+		$value = get_option( $arguments['uid'] );
+
+		if( ! $value ) {
+			$value = $arguments['default'];
+			$t10ns == $default_t10ns;
+		}
 
 		$t10ns = apply_filters( 'ac_geo_redirect_t10ns', $t10ns );
 

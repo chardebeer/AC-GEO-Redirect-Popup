@@ -17,6 +17,8 @@ use Ac_Geo_Redirect\CountryCode;
 use Ac_Geo_Redirect\Plugin;
 use Ac_Geo_Redirect\Template;
 use Ac_Geo_Redirect\SettingsPage;
+use Ac_Geo_Redirect\DebugPage;
+use Ac_Geo_Redirect\SettingsContent;
 use Ac_Geo_Redirect\T10ns;
 
 define( 'AC_GEO_REDIRECT_FILE', __FILE__ );
@@ -28,6 +30,8 @@ function ac_geo_redirect_plugin() {
 	if ( ! $plugin ) {
 		$plugin = new Plugin(
 			new SettingsPage(),
+			new SettingsContent(),
+			new DebugPage(),
 			new T10ns(),
 			new API(),
 			new Template(),
